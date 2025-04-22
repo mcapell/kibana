@@ -59,7 +59,7 @@ export const getRuleHealthRoute = (router: SecuritySolutionPluginRouter) => {
 
           const ruleHealthParameters = { interval: params.interval, rule_id: params.ruleId };
           const ruleHealth = await healthClient.calculateRuleHealth(ruleHealthParameters);
-
+          //console.log('>>>> getRuleHealthRoute ruleHealth', JSON.stringify(ruleHealth));
           const responseBody: GetRuleHealthResponse = {
             timings: calculateHealthTimings(params.requestReceivedAt),
             parameters: ruleHealthParameters,

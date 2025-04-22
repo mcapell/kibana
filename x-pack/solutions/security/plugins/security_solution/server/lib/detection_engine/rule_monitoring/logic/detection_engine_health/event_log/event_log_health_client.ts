@@ -118,6 +118,7 @@ export const createEventLogHealthClient = (
 
       const aggs = getRuleHealthAggregation(interval.granularity);
       const result = await aggregateEventsForRules([ruleId], interval, aggs);
+      console.log('>>>> got RAWWW results', JSON.stringify(result));
       return normalizeRuleHealthAggregationResult(result, aggs);
     },
 
